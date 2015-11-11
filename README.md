@@ -6,6 +6,8 @@
 [![Code Climate][codeclimate]][codeclimate-url]
 [![Test Coverage][codeclimate-coverage]][codeclimate-coverage-url]
 
+GTFriender Web Interface written in JavaScript with Ember.js.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
