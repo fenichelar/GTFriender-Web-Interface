@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "0.12.7"
+  - 0.12.7
 
 sudo: false
 
@@ -10,9 +10,11 @@ cache:
     - node_modules
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv
+  -in deploy_key.enc -out deploy_key -d
   - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
+  - npm config set spin false
+  - npm install -g npm@^2
 
 install:
   - npm install -g codeclimate-test-reporter
@@ -25,3 +27,8 @@ script:
 
 after_script:
   - codeclimate-test-reporter < lcov.info
+
+after_success:
+  - ember build --environment production
+  - chmod 600 deploy-key
+  - scp -P $SCP_PORT -o stricthostkeychecking=no -i ./deploy-key -r ./dist/. $SCP_USER@$SCP_IP:/var/www/gtfriender.com/.
