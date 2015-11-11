@@ -5,6 +5,9 @@ node_js:
 
 sudo: false
 
+branches:
+  only: master
+
 cache:
   directories:
     - node_modules
@@ -28,6 +31,6 @@ after_script:
 
 after_success:
   - ember build --environment production
-  - openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv -in deploy_key.enc -out deploy_key -d
+  - openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv -in deploy_key.enc -out ~/deploy_key -d
   - chmod 600 deploy-key
-  - scp -P $SCP_PORT -o stricthostkeychecking=no -i ./deploy-key -r ./dist/. $SCP_USER@$SCP_IP:/var/www/gtfriender.com/.
+  - scp -P $SCP_PORT -o stricthostkeychecking=no -i ~/deploy-key -r ./dist/. $SCP_USER@$SCP_IP:/var/www/gtfriender.com/.
