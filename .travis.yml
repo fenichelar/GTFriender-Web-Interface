@@ -13,6 +13,7 @@ cache:
     - node_modules
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv -in deploy_key.enc -out deploy_key -d
   - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
   - npm config set spin false
   - npm install -g npm@^2
@@ -31,6 +32,6 @@ after_script:
 
 after_success:
   - ember build --environment production
-  - openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv -in deploy_key.enc -out ~/deploy_key -d
   - chmod 600 deploy-key
-  - scp -P $SCP_PORT -o stricthostkeychecking=no -i ~/deploy-key -r ./dist/. $SCP_USER@$SCP_IP:/var/www/gtfriender.com/.
+  - mv deploy-key ~/.ssh/id_rsa
+  - scp -P $SCP_PORT -o stricthostkeychecking=no -r ./dist/. $SCP_USER@$SCP_IP:/var/www/gtfriender.com/.
