@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "0.12"
+  - "0.12.7"
 
 sudo: false
 
@@ -15,9 +15,13 @@ before_install:
   - "npm install -g npm@^2"
 
 install:
+  - npm install -g codeclimate-test-reporter
   - npm install -g bower
   - npm install
   - bower install
 
 script:
   - npm test
+
+after_script:
+  - codeclimate-test-reporter < lcov.info

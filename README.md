@@ -1,33 +1,38 @@
-# Gtfriender-web-interface
+# GTFriender Web Interface
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+[![Build Status][travis-badge]][travis-badge-url]
+[![Dependency Status][david-badge]][david-badge-url]
+[![devDependency Status][david-badge-dev]][david-badge-dev-url]
+[![Code Climate][codeclimate]][codeclimate-url]
+[![Test Coverage][codeclimate-coverage]][codeclimate-coverage-url]
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
+* [Watchman](https://facebook.github.io/watchman/)
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [Ember CLI](http://www.ember-cli.com/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone https://github.com/fenichelar/GTFriender-Web-Interface`
+* `cd GTFriender-Web-Interface`
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit the app at [http://localhost:4200](http://localhost:4200)
+* The app with automatically update when code changes are made
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+Make use of the many generators for code, try `ember help generate` for more details.
 
 ### Running Tests
 
@@ -41,7 +46,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+The app is deployed automatically using Travis CI.
 
 ## Further Reading / Useful Links
 
@@ -51,3 +56,13 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+[travis-badge]: https://travis-ci.org/fenichelar/GTFriender-Web-Interface.svg
+[travis-badge-url]: https://travis-ci.org/fenichelar/GTFriender-Web-Interface
+[david-badge]: https://david-dm.org/fenichelar/GTFriender-Web-Interface.svg
+[david-badge-url]: https://david-dm.org/fenichelar/GTFriender-Web-Interface
+[david-badge-dev]: https://david-dm.org/fenichelar/GTFriender-Web-Interface/dev-status.svg
+[david-badge-dev-url]: https://david-dm.org/fenichelar/GTFriender-Web-Interface#info=devDependencies
+[codeclimate]: https://codeclimate.com/github/fenichelar/GTFriender-Web-Interface/badges/gpa.svg
+[codeclimate-url]: https://codeclimate.com/github/fenichelar/GTFriender-Web-Interface
+[codeclimate-coverage]: https://codeclimate.com/github/fenichelar/GTFriender-Web-Interface/badges/coverage.svg
+[codeclimate-coverage-url]: https://codeclimate.com/github/fenichelar/GTFriender-Web-Interface/coverage
