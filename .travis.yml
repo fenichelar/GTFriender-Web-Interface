@@ -26,6 +26,9 @@ script:
 after_script:
   - codeclimate-test-reporter < lcov.info
 
+after_success:
+  - ./scripts/deliver.sh
+
 deploy:
   skip_cleanup: true
   provider: script
