@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ember build --environment production
 openssl aes-256-cbc -K $encrypted_faf5e7d2acb0_key -iv $encrypted_faf5e7d2acb0_iv -in travis_rsa.enc -out travis_rsa -d
 chmod 600 travis_rsa
