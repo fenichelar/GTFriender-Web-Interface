@@ -29,13 +29,15 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-## Running / Development
+## Development
+
+### Running
 
 * `ember server`
 * Visit the app at [http://localhost:4200](http://localhost:4200)
 * The app with automatically update when code changes are made
 
-## Stopping
+### Stopping
 
 * Control+c
 
@@ -56,7 +58,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+## Deploying
 
 The app is deployed automatically using Travis CI.
 
