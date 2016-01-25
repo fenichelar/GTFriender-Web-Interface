@@ -35,6 +35,10 @@ You will need the following things properly installed on your computer.
 * Visit the app at [http://localhost:4200](http://localhost:4200)
 * The app with automatically update when code changes are made
 
+## Stopping
+
+* Control+c
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details.
@@ -42,6 +46,9 @@ Make use of the many generators for code, try `ember help generate` for more det
 ### Running Tests
 
 * `ember test`
+
+### Checking Code Coverage
+
 * `ember test --server`
 
 ### Building
