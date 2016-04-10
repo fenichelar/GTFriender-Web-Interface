@@ -15,19 +15,13 @@ You will need the following things properly installed on your computer.
 * [Git](http://git-scm.com/)
 * [Watchman](https://facebook.github.io/watchman/)
 * [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-  - `npm install -g bower`
-* [PhantomJS](http://phantomjs.org/)
-  - `npm install -g phantomjs`
-* [Ember CLI](http://www.ember-cli.com/)
-  - `npm install -g ember-cli`
 
 ## Installation
 
 * `git clone https://github.com/fenichelar/GTFriender-Web-Interface`
 * `cd GTFriender-Web-Interface`
 * `npm install`
-* `bower install`
+* `npm run bower`
 
 ## Development
 
