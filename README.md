@@ -28,7 +28,7 @@ You will need the following things properly installed on your computer.
 ### Running
 
 * `ember server`
-* Visit the app at [http://gtfriender.dev:4200](http://gtfriender.dev:4200)
+* Visit the app at [http://localhost:4200](http://localhost:4200)
 * The app with automatically update when code changes are made
 
 ### Stopping
