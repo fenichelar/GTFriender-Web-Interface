@@ -8,15 +8,15 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('categories', function() {
     this.route('category', {
-      path: ':category'
+      path: ':category_id'
     }, function() {
       this.route('activities', function() {
         this.route('activity', {
-          path: ':activity'
+          path: ':activity_id'
         }, function() {
           this.route('events', function() {
             this.route('event', {
-              path: ':event'
+              path: ':event_id'
             }, function() {
               this.route('edit');
             });
