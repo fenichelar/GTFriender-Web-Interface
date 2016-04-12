@@ -1,8 +1,20 @@
 <h3>Events</h3>
 <ul>
-{{#each model as |event|}}
-  <li>{{event.name}}</li>
+{{#each model.events as |event|}}
+  <li>{{event.title}}
+    <ul>
+      <li>Location: {{event.location}}</li>
+      <li>Start: {{event.start}}</li>
+      <li>End: {{event.end}}</li>
+      <li>All Day: {{event.allDay}}</li>
+    </ul>
+  </li>
 {{/each}}
 </ul>
 
 {{outlet}}
+
+{{full-calendar
+  events=model.eventsArray
+  defaultView="agendaWeek"
+}}
