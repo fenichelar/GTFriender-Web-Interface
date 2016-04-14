@@ -1,8 +1,7 @@
 <h1>Categories</h1>
 <ul>
-{{#each model as |category|}}
-  <li>{{category.name}}</li>
-{{/each}}
+    {{#each model as |category|}}
+        <li id="category_{{category.id}}"><a href="/categories/{{category.id}}/activities/">{{category.name}}</a></li>
+    {{/each}}
+    {{outlet}}
 </ul>
-
-{{outlet}}

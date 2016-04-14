@@ -1,8 +1,7 @@
-<h2>Activities</h2>
 <ul>
-{{#each model as |activity|}}
-  <li>{{activity.name}}</li>
-{{/each}}
+    {{#each model as |activity|}}
+        <li><a href="/categories/{{activity.category.id}}/activities/{{activity.id}}/events">{{activity.name}}</a></li>
+    {{/each}}
 </ul>
 
 {{outlet}}
