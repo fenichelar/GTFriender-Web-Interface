@@ -22,5 +22,8 @@ module.exports = function(defaults) {
   app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
   app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
 
+  app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+  app.import('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
+
   return app.toTree();
 };

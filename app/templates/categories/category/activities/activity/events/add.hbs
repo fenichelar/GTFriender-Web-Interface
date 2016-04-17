@@ -1,0 +1,24 @@
+<h1>Add Event</h1>
+{{#bs-form  model=this action="submit"}}
+  {{bs-form-element
+    controlType="text"
+    label="Title"
+    property="title"
+  }}
+  {{bs-form-element
+    controlType="text"
+    label="Location"
+    property="location"
+  }}
+  {{bs-form-element
+    controlType="string"
+    label="Start"
+    property="start"
+  }}
+  {{bs-form-element
+    controlType="string"
+    label="End"
+    property="end"
+  }}
+  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}

@@ -6,8 +6,8 @@
   <strong>End:</strong> {{model.end}}<br>
 
   <br>
-  <button class="btn btn-primary">Edit</button>
-  <div id="edit-panel" class="panel panel-primary" style="padding:10px;">
+  <button class="btn btn-primary" {{action "showEdit"}}>Edit</button>
+  <div id="edit-panel" class="panel panel-primary" style="padding:10px; display:none">
     <h2>Edit</h2>
     {{#bs-form  model=this action="submit"}}
       {{bs-form-element
@@ -21,14 +21,16 @@
         property="location"
       }}
       {{bs-form-element
-        controlType="datetime-local"
+        controlType="string"
         label="Start"
         property="start"
+        class="datepicker"
       }}
       {{bs-form-element
-        controlType="datetime-local"
+        controlType="string"
         label="End"
         property="end"
+        class="datepicker"
       }}
       {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
     {{/bs-form}}
