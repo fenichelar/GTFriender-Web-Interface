@@ -14,9 +14,17 @@ export default Ember.Route.extend({
     });
     Ember.set(model, 'events', events);
     Ember.set(model, 'header', {
-      left: 'prev,next today',
+      left: 'prev,next today addEvent',
       center: 'title',
       right: 'month,agendaWeek,agendaDay'
+    });
+    Ember.set(model, 'customButtons', {
+      addEvent: {
+        text: 'Add Event',
+        click: function() {
+          
+        }
+      }
     });
     return model;
   }
