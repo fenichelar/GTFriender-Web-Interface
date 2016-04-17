@@ -9,5 +9,24 @@ export default Ember.Route.extend({
       outlet: "event",
       into: "categories"
     });
+  },
+  actions: {
+    submit() {
+      let route = this;
+      let controller = this.get('controller');
+
+      let event = this.store.createRecord('event', {
+        title: controller.get('title'),
+        location: controller.get('location'),
+        start: new Date(controller.get('start')),
+        end: new Date(controller.get('end')),
+        activity: this.modelFor('categories.category.activities.activity')
+      });
+      event.save().then(function() {
+        route.transitionTo('categories.category.activities.activity.events.event', event);
+      })['catch'](function(error) {
+        console.error(error);
+      });
+    }
   }
 });

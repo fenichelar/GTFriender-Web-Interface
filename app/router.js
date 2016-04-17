@@ -21,9 +21,7 @@ Router.map(function() {
             this.route('add');
             this.route('event', {
               path: ':event_id'
-            }, function() {
-              this.route('edit');
-            });
+            }, function() {});
           });
         });
       });
