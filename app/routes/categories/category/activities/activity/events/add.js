@@ -12,13 +12,11 @@ export default Ember.Route.extend({
       let route = this;
       let controller = this.get('controller');
 
-      console.log(Date(controller.get('start')).toString());
-
       let event = this.store.createRecord('event', {
         title: controller.get('title'),
         location: controller.get('location'),
-        start: Date(controller.get('start')).toString(),
-        end: Date(controller.get('end')).toString(),
+        start: new Date(controller.get('start')),
+        end: new Date(controller.get('end')),
         activity: this.modelFor('categories.category.activities.activity')
       });
       event.save().then(function() {
