@@ -17,8 +17,8 @@ export default Ember.Route.extend({
   },
 
   actions: {
-      selectEvent(event) {
-          this.transitionTo("categories.category.activities.activity.events.event", event.identifier);
-      }
+    selectEvent(event) {
+      this.transitionTo("categories.category.activities.activity.events.event", event.identifier);
+    }
   }
 });

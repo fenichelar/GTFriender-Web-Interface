@@ -1,11 +1,9 @@
 <ul>
-    {{#each model as |activity|}}
-        <li>
-            {{#link-to "categories.category.activities.activity.events" activity.id}}
-                {{activity.name}}
-            {{/link-to}}
-        </li>
-    {{/each}}
+  {{#each model as |activity|}}
+    <li>
+      {{#link-to "categories.category.activities.activity.events" activity.id}}
+        {{activity.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
 </ul>
-
-{{outlet}}

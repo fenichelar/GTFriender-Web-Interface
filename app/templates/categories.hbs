@@ -1,11 +1,19 @@
-<h1>Categories</h1>
-<ul>
+<div class="col-md-3">
+  <h1>Categories</h1>
+  <ul>
     {{#each model as |category|}}
-        <li>
-            {{#link-to "categories.category.activities" category.id}}
-                {{category.name}}
-            {{/link-to}}
-        </li>
+      <li>
+        {{#link-to "categories.category.activities" category.id}}
+          {{category.name}}
+        {{/link-to}}
+        {{outlet category.id}}
+      </li>
     {{/each}}
-    {{outlet}}
-</ul>
+  </ul>
+</div>
+<div class="col-md-6">
+  {{outlet "activity"}}
+</div>
+<div class="col-md-3">
+  {{outlet "event"}}
+</div>
