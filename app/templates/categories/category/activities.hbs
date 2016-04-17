@@ -1,6 +1,6 @@
 <ul>
   <li>
-    {{input type="text" placeholder="New Activity" value=newActivityName insert-newline="createActivity" }}
+    {{input type="text" placeholder="New Activity" value=newActivityName insert-newline="createActivity" size="13"}}
     <button class="btn btn-primary btn-sm" {{action "createActivity"}} disabled={{disabled}}>Add</button>
   </li>
   {{#each model as |activity|}}

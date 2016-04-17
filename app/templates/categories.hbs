@@ -1,8 +1,8 @@
-<div class="col-md-3">
+<div class="col-md-2">
   <h1>Categories</h1>
   <ul>
     <li>
-      {{input type="text" placeholder="New category" value=newCategoryName insert-newline="createCategory" }}
+      {{input type="text" placeholder="New category" value=newCategoryName insert-newline="createCategory" size="13"}}
       <button class="btn btn-primary btn-sm" {{action "createCategory"}} disabled={{disabled}}>Add</button>
     </li>
     {{#each model as |category|}}
@@ -18,6 +18,6 @@
 <div class="col-md-6">
   {{outlet "activity"}}
 </div>
-<div class="col-md-3">
+<div class="col-md-4">
   {{outlet "event"}}
 </div>
