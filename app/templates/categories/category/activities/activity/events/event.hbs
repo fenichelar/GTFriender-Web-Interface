@@ -6,28 +6,31 @@
   <strong>End:</strong> {{model.end}}<br>
 
   <br>
-  <h2>Edit</h2>
-  {{#bs-form  model=this action="submit"}}
-    {{bs-form-element
-      controlType="text"
-      label="Title"
-      property="title"
-    }}
-    {{bs-form-element
-      controlType="text"
-      label="Location"
-      property="location"
-    }}
-    {{bs-form-element
-      controlType="datetime-local"
-      label="Start"
-      property="start"
-    }}
-    {{bs-form-element
-      controlType="datetime-local"
-      label="End"
-      property="end"
-    }}
-    {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
-  {{/bs-form}}
+  <button class="btn btn-primary">Edit</button>
+  <div id="edit-panel" class="panel panel-primary" style="padding:10px;">
+    <h2>Edit</h2>
+    {{#bs-form  model=this action="submit"}}
+      {{bs-form-element
+        controlType="text"
+        label="Title"
+        property="title"
+      }}
+      {{bs-form-element
+        controlType="text"
+        label="Location"
+        property="location"
+      }}
+      {{bs-form-element
+        controlType="datetime-local"
+        label="Start"
+        property="start"
+      }}
+      {{bs-form-element
+        controlType="datetime-local"
+        label="End"
+        property="end"
+      }}
+      {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+    {{/bs-form}}
+  </div>
 </div>
