@@ -1,13 +1,11 @@
-<ul>
-  <li>
+<ul class="list-group" style="padding-left: 20px">
+  <li class="list-group-item">
     {{input type="text" placeholder="New Activity" value=newActivityName insert-newline="createActivity" size="13"}}
     <button class="btn btn-primary btn-sm" {{action "createActivity"}} disabled={{disabled}}>Add</button>
   </li>
   {{#each model as |activity|}}
-    <li>
-      {{#link-to "categories.category.activities.activity.events" activity.id}}
-        {{activity.name}}
-      {{/link-to}}
-    </li>
+    {{#link-to "categories.category.activities.activity.events" activity.id tagName="li" class="list-group-item"}}
+      {{activity.name}}
+    {{/link-to}}
   {{/each}}
 </ul>
