@@ -18,6 +18,7 @@ Router.map(function() {
           path: ':activity_id'
         }, function() {
           this.route('events', function() {
+            this.route('add');
             this.route('event', {
               path: ':event_id'
             }, function() {

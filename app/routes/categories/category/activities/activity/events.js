@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function() {
     var model = {};
+    var _this = this;
     var events = this.modelFor('categories.category.activities.activity').get('events');
     var eventsArray = [];
     events.then(function(eventslist) {
@@ -22,7 +23,7 @@ export default Ember.Route.extend({
       addEvent: {
         text: 'Add Event',
         click: function() {
-          
+          _this.transitionTo('categories.category.activities.activity.events.add');
         }
       }
     });

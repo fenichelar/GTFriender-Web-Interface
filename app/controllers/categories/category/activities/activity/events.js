@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
 
   actions: {
     selectEvent(event) {
-      this.transitionTo("categories.category.activities.activity.events.event", event.identifier);
+      this.transitionToRoute("categories.category.activities.activity.events.event", event.identifier);
     }
   }
 });
