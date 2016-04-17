@@ -1,7 +1,9 @@
 {{full-calendar
+  register-as="accessToFullCalendar"
   events=model.eventsArray
   eventClick=(action "selectEvent")
   defaultView="month"
+  header=model.header
 }}
 
 {{outlet}}

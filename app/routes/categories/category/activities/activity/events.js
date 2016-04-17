@@ -13,6 +13,11 @@ export default Ember.Route.extend({
       Ember.set(model, 'eventsArray', eventsArray);
     });
     Ember.set(model, 'events', events);
+    Ember.set(model, 'header', {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    });
     return model;
   }
 });
