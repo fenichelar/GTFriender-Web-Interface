@@ -1,4 +1,8 @@
 <ul>
+  <li>
+    {{input type="text" placeholder="New Activity" value=newActivityName insert-newline="createActivity" }}
+    <button class="btn btn-primary btn-sm" {{action "createActivity"}} disabled={{disabled}}>Add</button>
+  </li>
   {{#each model as |activity|}}
     <li>
       {{#link-to "categories.category.activities.activity.events" activity.id}}

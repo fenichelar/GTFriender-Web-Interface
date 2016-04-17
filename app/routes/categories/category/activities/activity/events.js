@@ -14,11 +14,5 @@ export default Ember.Route.extend({
     });
     Ember.set(model, 'events', events);
     return model;
-  },
-
-  actions: {
-    selectEvent(event) {
-      this.transitionTo("categories.category.activities.activity.events.event", event.identifier);
-    }
   }
 });

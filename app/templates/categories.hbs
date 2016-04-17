@@ -1,6 +1,10 @@
 <div class="col-md-3">
   <h1>Categories</h1>
   <ul>
+    <li>
+      {{input type="text" placeholder="New category" value=newCategoryName insert-newline="createCategory" }}
+      <button class="btn btn-primary btn-sm" {{action "createCategory"}} disabled={{disabled}}>Add</button>
+    </li>
     {{#each model as |category|}}
       <li>
         {{#link-to "categories.category.activities" category.id}}

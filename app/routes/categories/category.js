@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   renderTemplate: function() {
     this.render("categories.category", {
-      outlet: this.get('currentModel').id,
+      outlet: this.modelFor('categories.category').get('id'),
       into: "categories"
     });
   }
