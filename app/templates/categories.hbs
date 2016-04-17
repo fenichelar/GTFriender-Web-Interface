@@ -1,7 +1,11 @@
 <h1>Categories</h1>
 <ul>
     {{#each model as |category|}}
-        <li id="category_{{category.id}}"><a href="/categories/{{category.id}}/activities/">{{category.name}}</a></li>
+        <li>
+            {{#link-to "categories.category.activities" category.id}}
+                {{category.name}}
+            {{/link-to}}
+        </li>
     {{/each}}
     {{outlet}}
 </ul>

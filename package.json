@@ -20,6 +20,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "bower": "^1.7.9",
     "broccoli-asset-rev": "^2.2.0",
     "ember-cli": "1.13.14",
     "ember-cli-app-version": "^1.0.0",
@@ -39,9 +40,7 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "1.13.15",
     "ember-disable-proxy-controllers": "^1.0.1",
-    "ember-export-application-global": "^1.0.4"
-  },
-  "dependencies": {
-    "bower": "^1.7.9"
+    "ember-export-application-global": "^1.0.4",
+    "ember-route-action-helper": "0.3.0"
   }
 }

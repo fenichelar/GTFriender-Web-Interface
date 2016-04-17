@@ -1,6 +1,10 @@
 <ul>
     {{#each model as |activity|}}
-        <li><a href="/categories/{{activity.category.id}}/activities/{{activity.id}}/events">{{activity.name}}</a></li>
+        <li>
+            {{#link-to "categories.category.activities.activity.events" activity.id}}
+                {{activity.name}}
+            {{/link-to}}
+        </li>
     {{/each}}
 </ul>
 
