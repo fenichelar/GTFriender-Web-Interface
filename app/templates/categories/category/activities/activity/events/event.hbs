@@ -1,5 +1,5 @@
 <div class="panel panel-default" style="padding:20px;">
-<h1 class="page-header" align="center">{{model.title}}</h1>
+  <h1 class="page-header" align="center">{{model.title}}</h1>
 
   <br>
   <div>
@@ -48,3 +48,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('.datepicker > input').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm',
+      inline: true
+    });
+  })
+</script>

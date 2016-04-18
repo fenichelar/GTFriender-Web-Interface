@@ -6,15 +6,6 @@ export default Ember.Controller.extend({
   start: null,
   end: null,
 
-  setup: function() {
-    Ember.run.schedule('afterRender', this, function () {
-      Ember.$('.datepicker > input').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm',
-        inline: true
-      });
-    });
-  }.on('init'),
-
   actions: {
     showEdit: function() {
       var model = this.get('model');

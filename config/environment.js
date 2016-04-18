@@ -9,7 +9,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-inline'",
       'font-src': "'self'",
       'connect-src': "'self' localhost:1337 api.gtfriender.com",
       'img-src': "'self'",
