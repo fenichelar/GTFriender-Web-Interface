@@ -1,40 +1,50 @@
 <div class="panel panel-default" style="padding:20px;">
-  <h1 class="page-header" align="center">{{model.title}}</h1>
-
-  <strong>Location:</strong> {{#if model.location}}{{model.location}}{{else}}None{{/if}}<br>
-  <strong>Start:</strong> {{model.start}}<br>
-  <strong>End:</strong> {{model.end}}<br>
+<h1 class="page-header" align="center">{{model.title}}</h1>
 
   <br>
-  <button class="btn btn-primary" {{action "showEdit"}}>Edit</button>
-  <div id="edit-panel" class="panel panel-primary" style="padding:10px; display:none">
-    <div class="panel-heading">
-        <h3 class="panel-title">Edit Event</h3>
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a id="viewButton" href="#view" aria-controls="view" role="tab" data-toggle="tab">View</a></li>
+      <li role="presentation"><a {{action "showEdit"}} href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Edit</a></li>
+      <li role="presentation"><a href="#delete" aria-controls="delete" role="tab" data-toggle="tab">Delete</a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="view">
+        <strong>Location:</strong> {{#if model.location}}{{model.location}}{{else}}None{{/if}}<br>
+        <strong>Start:</strong> {{model.start}}<br>
+        <strong>End:</strong> {{model.end}}<br>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="edit">
+        {{#bs-form  model=this action="submit"}}
+          {{bs-form-element
+            controlType="text"
+            label="Edit Title"
+            property="title"
+          }}
+          {{bs-form-element
+            controlType="text"
+            label="Edit Location"
+            property="location"
+          }}
+          {{bs-form-element
+            controlType="string"
+            label="Edit Start"
+            property="start"
+            class="datepicker"
+          }}
+          {{bs-form-element
+            controlType="string"
+            label="Edit End"
+            property="end"
+            class="datepicker"
+          }}
+          {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+        {{/bs-form}}
+      </div>
+      <div role="tabpanel" class="tab-pane" id="delete">
+        <br>
+        <button class="btn btn-primary" {{action "deleteEvent"}}>Delete</button>
+      </div>
     </div>
-    {{#bs-form  model=this action="submit"}}
-      {{bs-form-element
-        controlType="text"
-        label="Title"
-        property="title"
-      }}
-      {{bs-form-element
-        controlType="text"
-        label="Location"
-        property="location"
-      }}
-      {{bs-form-element
-        controlType="string"
-        label="Start"
-        property="start"
-        class="datepicker"
-      }}
-      {{bs-form-element
-        controlType="string"
-        label="End"
-        property="end"
-        class="datepicker"
-      }}
-      {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
-    {{/bs-form}}
   </div>
 </div>

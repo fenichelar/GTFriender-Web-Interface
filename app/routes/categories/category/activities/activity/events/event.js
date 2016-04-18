@@ -12,21 +12,22 @@ export default Ember.Route.extend({
   },
   actions: {
     submit() {
-      let route = this;
       let controller = this.get('controller');
 
-      let event = this.store.createRecord('event', {
-        title: controller.get('title'),
-        location: controller.get('location'),
-        start: new Date(controller.get('start')),
-        end: new Date(controller.get('end')),
-        activity: this.modelFor('categories.category.activities.activity')
+      this.store.findRecord('event', this.modelFor('categories.category.activities.activity.events.event').get('id')).then(function(event) {
+        event.set('title', controller.get('title'));
+        event.set('location', controller.get('location'));
+        event.set('start', new Date(controller.get('start')));
+        event.set('end', new Date(controller.get('end')));
+        event.save().then(function() {
+          Ember.$("#viewButton").click();
+        })['catch'](function(error) {
+          console.error(error);
+        });
       });
-      event.save().then(function() {
-        route.transitionTo('categories.category.activities.activity.events.event', event);
-      })['catch'](function(error) {
-        console.error(error);
-      });
+    },
+    deleteEvent() {
+      
     }
   }
 });

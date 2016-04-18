@@ -9,7 +9,8 @@ export default Ember.Controller.extend({
   setup: function() {
     Ember.run.schedule('afterRender', this, function () {
       Ember.$('.datepicker > input').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm'
+        format: 'YYYY-MM-DD HH:mm',
+        inline: true
       });
     });
   }.on('init'),
@@ -26,7 +27,6 @@ export default Ember.Controller.extend({
       this.set('location', model.get('location'));
       this.set('start', startString);
       this.set('end', endString);
-      Ember.$("#edit-panel").toggle();
     }
   }
 });
