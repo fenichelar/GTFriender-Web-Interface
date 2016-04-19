@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from './config/environment';
 
 export default Ember.Route.extend({
   model: function(params) {
@@ -33,7 +34,7 @@ export default Ember.Route.extend({
     joinEvent() {
       var id = this.modelFor('categories.category.activities.activity.events.event').get('id');
       Ember.$.ajax({
-        url: 'http://localhost:1337/users/1/events',
+        url: config.apiHost + '/users/56bd40de14529cd21e26cc27/events',
         method: 'POST',
         data: {id: id}
       }).then(function() {
@@ -43,7 +44,7 @@ export default Ember.Route.extend({
     leaveEvent() {
       var id = this.modelFor('categories.category.activities.activity.events.event').get('id');
       Ember.$.ajax({
-        url: 'http://localhost:1337/users/1/events',
+        url: config.apiHost + '/users/56bd40de14529cd21e26cc27/events',
         method: 'DELETE',
         data: {id: id}
       }).then(function() {
