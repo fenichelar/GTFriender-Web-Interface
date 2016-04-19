@@ -15,6 +15,7 @@ export default Ember.Route.extend({
       let event = this.store.createRecord('event', {
         title: controller.get('title'),
         location: controller.get('location'),
+        description: controller.get('description'),
         start: new Date(controller.get('start')),
         end: new Date(controller.get('end')),
         activity: this.modelFor('categories.category.activities.activity')
@@ -25,6 +26,7 @@ export default Ember.Route.extend({
         controller.set('start', '');
         controller.set('end', '');
         route.transitionTo('categories.category.activities.activity.events.event', event);
+        window.location.reload(true);
       })['catch'](function(error) {
         console.error(error);
       });

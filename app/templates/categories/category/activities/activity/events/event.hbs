@@ -10,6 +10,7 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="view">
         <strong>Location:</strong> {{#if model.location}}{{model.location}}{{else}}None{{/if}}<br>
+        <strong>Description:</strong> {{model.description}}<br>
         <strong>Start:</strong> {{model.start}}<br>
         <strong>End:</strong> {{model.end}}<br>
         <strong>Users:</strong>
@@ -25,23 +26,28 @@
         {{#bs-form  model=this action="submit"}}
           {{bs-form-element
             controlType="text"
-            label="Edit Title"
+            label="Title"
             property="title"
           }}
           {{bs-form-element
             controlType="text"
-            label="Edit Location"
+            label="Location"
             property="location"
           }}
           {{bs-form-element
+            controlType="textarea"
+            label="Description"
+            property="description"
+          }}
+          {{bs-form-element
             controlType="string"
-            label="Edit Start"
+            label="Start"
             property="start"
             class="datepicker"
           }}
           {{bs-form-element
             controlType="string"
-            label="Edit End"
+            label="End"
             property="end"
             class="datepicker"
           }}

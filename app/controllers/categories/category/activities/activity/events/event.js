@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   title: null,
   location: null,
+  description: null,
   start: null,
   end: null,
 
@@ -16,6 +17,7 @@ export default Ember.Controller.extend({
 
       this.set('title', model.get('title'));
       this.set('location', model.get('location'));
+      this.set('description', model.get('description'));
       this.set('start', startString);
       this.set('end', endString);
     }

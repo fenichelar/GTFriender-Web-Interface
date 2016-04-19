@@ -17,6 +17,7 @@ export default Ember.Route.extend({
       this.store.findRecord('event', this.modelFor('categories.category.activities.activity.events.event').get('id')).then(function(event) {
         event.set('title', controller.get('title'));
         event.set('location', controller.get('location'));
+        event.set('description', controller.get('description'));
         event.set('start', new Date(controller.get('start')));
         event.set('end', new Date(controller.get('end')));
         event.save().then(function() {
