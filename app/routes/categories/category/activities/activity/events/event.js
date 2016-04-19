@@ -27,7 +27,27 @@ export default Ember.Route.extend({
       });
     },
     deleteEvent() {
-      
+
+    },
+    joinEvent() {
+      var id = this.modelFor('categories.category.activities.activity.events.event').get('id');
+      Ember.$.ajax({
+        url: 'http://localhost:1337/users/1/events',
+        method: 'POST',
+        data: {id: id}
+      }).then(function() {
+        window.location.reload(true);
+      });
+    },
+    leaveEvent() {
+      var id = this.modelFor('categories.category.activities.activity.events.event').get('id');
+      Ember.$.ajax({
+        url: 'http://localhost:1337/users/1/events',
+        method: 'DELETE',
+        data: {id: id}
+      }).then(function() {
+        window.location.reload(true);
+      });
     }
   }
 });

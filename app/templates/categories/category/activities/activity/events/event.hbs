@@ -6,13 +6,20 @@
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a id="viewButton" href="#view" aria-controls="view" role="tab" data-toggle="tab">View</a></li>
       <li role="presentation"><a {{action "showEdit"}} href="#edit" aria-controls="edit" role="tab" data-toggle="tab">Edit</a></li>
-      <li role="presentation"><a href="#delete" aria-controls="delete" role="tab" data-toggle="tab">Delete</a></li>
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="view">
         <strong>Location:</strong> {{#if model.location}}{{model.location}}{{else}}None{{/if}}<br>
         <strong>Start:</strong> {{model.start}}<br>
         <strong>End:</strong> {{model.end}}<br>
+        <strong>Users:</strong>
+        <ul>
+          {{#each model.users as |user|}}
+            <li>{{user.auth.first_name}} {{user.auth.last_name}}</li>
+          {{/each}}
+        </ul>
+        <button class="btn btn-primary" {{action "joinEvent"}}>Join</button>
+        <button class="btn btn-danger" {{action "leaveEvent"}}>Leave</button>
       </div>
       <div role="tabpanel" class="tab-pane" id="edit">
         {{#bs-form  model=this action="submit"}}
@@ -39,11 +46,8 @@
             class="datepicker"
           }}
           {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+          <button class="btn btn-danger" {{action "deleteEvent"}}>Delete</button>
         {{/bs-form}}
-      </div>
-      <div role="tabpanel" class="tab-pane" id="delete">
-        <br>
-        <button class="btn btn-primary" {{action "deleteEvent"}}>Delete</button>
       </div>
     </div>
   </div>

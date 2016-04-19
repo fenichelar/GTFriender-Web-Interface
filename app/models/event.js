@@ -6,5 +6,6 @@ export default DS.Model.extend({
   start: DS.attr('date'),
   end: DS.attr('date'),
   allDay: DS.attr('boolean'),
-  activity: DS.belongsTo('activity')
+  activity: DS.belongsTo('activity'),
+  users: DS.hasMany('user', { async: true })
 });
