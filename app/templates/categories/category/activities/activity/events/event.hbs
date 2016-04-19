@@ -16,7 +16,7 @@
         <strong>Users:</strong>
         <ul>
           {{#each model.users as |user|}}
-            <li>{{user.auth.first_name}} {{user.auth.last_name}}</li>
+            <li>{{user.username}}</li>
           {{/each}}
         </ul>
         <button class="btn btn-primary" {{action "joinEvent"}}>Join</button>
