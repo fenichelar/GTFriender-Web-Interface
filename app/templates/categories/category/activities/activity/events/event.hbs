@@ -9,16 +9,21 @@
     </ul>
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="view">
+        <br>
         <strong>Location:</strong> {{#if model.location}}{{model.location}}{{else}}None{{/if}}<br>
+        <br>
         <strong>Description:</strong> {{model.description}}<br>
+        <br>
         <strong>Start:</strong> {{model.start}}<br>
         <strong>End:</strong> {{model.end}}<br>
+        <br>
         <strong>Users:</strong>
         <ul>
           {{#each model.users as |user|}}
             <li>{{user.username}}</li>
           {{/each}}
         </ul>
+        <br>
         <button class="btn btn-primary" {{action "joinEvent"}}>Join</button>
         <button class="btn btn-danger" {{action "leaveEvent"}}>Leave</button>
       </div>
